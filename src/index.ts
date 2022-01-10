@@ -1,17 +1,21 @@
 /* eslint-disable no-return-assign */
 
-// Source: https://www.hackerrank.com/challenges/simple-array-sum/problem?isFullScreen=true
+// Source: https://www.hackerrank.com/challenges/grading/problem?isFullScreen=true
 
-function simpleArraySum(ar: Array<number>): number {
-  let suma = 0;
-  ar.forEach((element) => suma += element);
-  return suma;
+function gradingStudents(grades: number[]){
+  // Write your code here 
+  for(let index = 0; index < grades.length; index++){
+    if ((grades[index] >= 38) && (((grades[index] % 5) == 3) || ((grades[index] % 5) == 4))) {
+    grades[index] = grades[index] + (5 -(grades[index] % 5)); 
+    }
+  }
+  return grades;  
 }
 
 function main() {
   console.log('---------- Cool Programing ----------\n');
-  const testArray = [1, 2, 3, 4, 10, 11];
-  const result = simpleArraySum(testArray);
+  const testArray = [4, 73, 67, 38, 33];
+  const result = gradingStudents(testArray);
   console.log('Result: ', result);
 }
 
